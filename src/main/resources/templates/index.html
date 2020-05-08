@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+</head>
+<body>
+    <h1>Estudiante</h1>
+    <form th:action="@{/formData}" th:object="${student}" method="POST">
+        <label>Nombre</label><input type="text" name="nombre" id="nombre" th:field="*{nombre}"><br>
+        <label>Apellido</label><input type="text" name="apellido" id="apellido" th:field="*{apellido}"><br>
+        <label>Fecha de entrada</label><input type="date" name="fentrada" id="fentrada" th:field="*{fEntrada}"><br>
+        <label>Carrera</label><input type="text" name="carrera" id="carrera" th:field="*{carrera}"><br>
+        <label>Activo: </label><input type="radio" th:field="*{estado}" th:value="${true}">
+        <label>Inactivo: </label><input type="radio" th:field="*{estado}" th:value="${false}">
+        <button type="submit" value="Enviar">Enviar</button>
+    </form>
+</body>
+</html>
